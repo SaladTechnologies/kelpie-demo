@@ -35,11 +35,11 @@ except FileNotFoundError:
     current_count = 0
 
 while keep_alive and current_count < max_count:
-    print(f'Processing {current_count}')
+    print(f'Processing {current_count}', flush=True)
     time.sleep(10)
     current_count += 1
     with open(checkpoint_file, 'w') as f:
         f.write(str(current_count))
 
 with open(os.path.join(output_dir, 'result.txt'), 'w') as f:
-    f.write(f'Processed {current_count} records')
+    f.write(f'Processed {current_count} records', flush=True)
