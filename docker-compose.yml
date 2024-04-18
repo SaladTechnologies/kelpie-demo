@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  kelpie-worker:
+    image: saladtechnologies/kelpie-demo:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.kelpie
+    environment:
+      - KELPIE_API_URL=http://host.docker.internal:8787
+      - KELPIE_API_KEY
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
+      - AWS_REGION
+      - AWS_ENDPOINT_URL
+      - SALAD_CONTAINER_GROUP_ID=local-test
+      - SALAD_MACHINE_ID=local-test

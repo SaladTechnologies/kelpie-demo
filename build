@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+docker build -t saladtechnologies/kelpie-demo:base -f Dockerfile.base .

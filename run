@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+docker run --rm -it --name job \
+-e INPUT_DIR="/external/inputs" \
+-e OUTPUT_DIR="/external/outputs" \
+-e CHECKPOINT_DIR="/external/checkpoints" \
+-v ./external:/external \
+saladtechnologies/kelpie-demo:latest
