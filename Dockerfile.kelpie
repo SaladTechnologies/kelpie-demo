@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/SaladTechnologies/kelpie/releases/download/0.0.6/kelpie -O /kelpie && chmod +x /kelpie
+RUN wget https://github.com/SaladTechnologies/kelpie/releases/download/0.0.7/kelpie -O /kelpie && chmod +x /kelpie
+# COPY kelpie /kelpie
 
 CMD ["/kelpie"]
