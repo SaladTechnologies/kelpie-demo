@@ -1,0 +1,30 @@
+#! /usr/bin/env bash
+
+#!/bin/bash
+
+# Default values
+num=1
+size=512000  # Default size of 512kb
+output="output"
+
+# Parse command-line arguments
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --num) num="$2"; shift ;;
+        --size) size="$2"; shift ;;
+        --output) output="$2"; shift ;;
+        *) echo "Unknown parameter passed: $1"; exit 1 ;;
+    esac
+    shift
+done
+
+mkdir -p $output
+
+# Generating files
+for (( i=1; i<=num; i++ ))
+do
+    dd if=/dev/urandom of="$output/file_$i.dat" bs=$size count=1 status=none
+    echo "Generated file_$i.dat of size $size bytes."
+done
+
+echo "Generated $num files each of size $size bytes."
