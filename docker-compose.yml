@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   kelpie-worker:
     image: saladtechnologies/kelpie-demo:latest

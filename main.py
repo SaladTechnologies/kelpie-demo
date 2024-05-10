@@ -2,9 +2,9 @@ import os
 import signal
 import time
 
-input_dir = os.getenv('INPUT_DIR')
-output_dir = os.getenv('OUTPUT_DIR')
-checkpoint_dir = os.getenv('CHECKPOINT_DIR')
+input_dir = os.getenv('INPUT_DIR', "/input")
+output_dir = os.getenv('OUTPUT_DIR', "/output")
+checkpoint_dir = os.getenv('CHECKPOINT_DIR', "/checkpoint")
 max_count = int(os.getenv('MAX_COUNT', "50"))
 
 if not input_dir or not output_dir or not checkpoint_dir:
